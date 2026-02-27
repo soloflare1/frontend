@@ -1,0 +1,252 @@
+H (Hyper): Reference / link 
+T (Text) : Data/info 
+M (Markup) : predefined / marked 
+L (Language) : communication
+HTML -> HyperText Markup Language
+
+HyperText -> Text with links
+Markup ->  <> </> tags to structure and format the text
+        means to annotate or add information
+        annotate means to add notes or comments in a text
+        
+Language -> A system of communication
+
+non-semantic tags -> tags that do not convey meaning
+                     meaning is only presentation, how it looks
+semantic tags -> tags that convey meaning,
+                meaning is both presentation and what it represents
+                to both humans and machines (browsers, search engines, assistive technologies)
+
+block elements -> take up the full width available
+                  start on a new line
+                  examples: <div>, <p>, <h1> to <h6>, <ul>, <ol>, <li>, <header>, <footer>, <section>
+
+inline elements -> take up only as much width as necessary
+                   do not start on a new line
+                   examples: <span>, <a>, <b>, <i>, <strong>, <em>, <img>
+
+container tags -> tags that can contain other tags,to group elements together
+                  examples: <div>, <span>, <p>, <ul>, <ol>, <li>, <header>, <footer>, <section> 
+        
+-----------------------
+
+
+paragraph : <p></p>   ( semantic tag, block )
+            it represents a paragraph of text
+            also adds space before and after the paragraph by default in browsers
+            and it is a block-level element
+            which means it takes up the full width available and starts on a new line
+
+---------------
+text formatting
+
+---------------
+text bold 
+bold : <b>bold</b>   ( semantic tag, inline )
+strong : <strong>strong</strong>   ( non-semantic tag, inline )
+
+
+---------------
+text italic
+italic : <i>italic</i>   ( semantic tag, inline )
+emphasis : <em>emphasis</em>   ( non-semantic tag, inline )
+---------------
+
+
+line break : <br>   ( non-semantic tag, inline )
+horizontal rule : <hr>   ( non-semantic tag, inline )
+comments : <!-- This is a comment -->   
+
+---------------
+<h1> to <h6> : headings ( semantic tags, block )
+               represent section headings
+    
+<h1> : most important heading
+<h6> : least important heading
+---------------
+
+list tags ( semantic tags, block )
+list items : <li>li</li>   
+            represents an item in a list
+unordered list : <ul>ul</ul>  
+                 represents a list of items in no particular order
+ordered list : <ol>ol</ol> 
+               represents a list of items in a specific order
+dl : <dl></dl>   ( semantic tag, block )
+      represents a description list
+      contains pairs of terms and descriptions
+  
+---------------
+examples:   
+     <ul type="disc">   ( default , circle, square )
+     <ul type="circle">  
+     <ul type="square">   
+nested lists : lists within lists
+<ul>
+  <li>Item 1</li>
+     <ol>
+       <li>Subitem 1.1</li>
+       <li>Subitem 1.2</li> 
+    </ol>
+  <li>Item 2
+    <ul>
+      <li>Subitem 2.1</li>
+      <li>Subitem 2.2</li>
+    </ul>
+  </li>
+  <li>Item 3</li>
+</ul>
+---------------
+generic containers ( non-semantic tags, block/inline , used for grouping , styling, layout , no specific meaning )
+used to group elements together
+they have no specific meaning
+they are used for styling and layout purposes
+
+examples: div, span
+div     : <div></div>   ( non-semantic tag, block )
+          used to group block-level elements 
+                          and do not represent any specific meaning
+                          used purely for grouping and styling purposes
+division : <div></div>   ( non-semantic tag, block )
+         <div>
+           <h1>This is a heading inside a div.</h1>
+           <p>This is another paragraph inside the same div.</p>
+        </div>
+         
+span    : <span></span>   ( non-semantic tag, inline )
+
+
+section : <section></section>   ( semantic tag, block )
+          represents a standalone section of content
+          often used to group related content together
+          can contain headings, paragraphs, images, etc.
+---------------
+
+button : <button></button>   ( semantic tag, inline )
+         represents a clickable button
+         can contain text or images
+         used to trigger actions when clicked
+         example:
+         <button>Click Me!</button>
+
+---------------
+link: <a href="url"></a>   ( semantic tag, inline ) in same tab or window ( default behavior )
+       
+        a : anchor
+        href : hypertext reference ( attribute that specifies the URL of the link )
+        represents a hyperlink that links to another webpage or resource
+        can contain text or images
+     
+        <a href="url"></a> but no text or image inside will not be visible
+        so if    <a href="url"> Here click</a>  
+        then "Here click" will be visible as a clickable link
+
+        example:
+        let me visit google  <a href="https://www.google.com">Go to Google</a>
+    different types of links:
+    online link:
+        <a href="https://www.example.com">Go to Example.com</a>
+    Local link:   ( file in the same directory )
+        <a href="file.html">Go to File</a>  
+    parent directory link: ( one level up )
+        <a href="../page3.html">Go to Page 3</a>
+    absolute path link:    ( from root directory )
+        <a href="D:/flare/Pro/HTML/page4.html">Go to Page 4</a>
+
+
+    *** target : specifies where to open the linked document
+    in new tab or window :
+        <a href="https://www.google.com" target="_blank">Go to Google</a>   
+
+    
+---------------
+ Display online image, local image, folder image
+image : <img src="url" alt="description">   ( non-semantic tag, inline, self-closing )
+        img : image
+        src : source ( attribute that specifies the URL of the image )
+        alt : alternative text ( attribute that provides a text description of the image for accessibility )
+        represents an image
+        it is a self-closing tag ( does not require a closing tag )
+        valid :
+        <img> or <img /> or <img > or <img />
+        example:
+        online image:
+        <img src="https://www.example.com/image.jpg" alt="Example Image">
+        
+        local image: ( image in the same directory )
+        <img src="imageName.jpg" alt="Local Image">
+        
+        folder image: ( image in a folder named 'folderName' in the same directory )
+        <img src="folderName/photoName.png" alt="Folder Image">
+
+        one level up folder image: ( image in a folder named 'assets' one level up )
+           <img src="../assets/picture.png" alt="One Level Up Folder Image">
+        
+        in a absolute path:
+           <img src="D:/flare/Pro/HTML/images/sample.png" alt="Absolute Path Image">
+
+
+
+----------------
+
+input elements ( semantic tags, inline )
+used to create interactive elements in forms
+
+input : 
+        valid :
+        <input> or <input /> or <input > or <input />
+        it is a self-closing tag ( does not require a closing tag )
+
+<input type="type" placeholder="place a instruction for user " />   ( semantic tag, inline, self-closing )
+         represents an input field
+         type attribute specifies the type of input field
+         examples of types:
+         text, password, email, number, checkbox, radio, submit, reset, button
+
+         example:
+         text input:
+         <input type="text" /> ( single-line text input field )
+
+         password input:
+         <input type="password" /> (hides the entered characters)
+
+         checkbox input:
+         <input type="checkbox" /> ( can be checked or unchecked )
+
+         radio button input:
+         <input type="radio" /> ( part of a group of radio buttons where only one can be selected )
+
+        <input type=submit />   (submit button)
+        <input type=reset />    (reset button)
+
+----------------
+
+form elements ( semantic tags, block/inline )
+used to create forms for user input
+form : <form></form>   ( semantic tag, block )
+        represents a form for user input
+        can contain various input elements like text fields, checkboxes, radio buttons, submit buttons, etc.
+        example:
+        <form>
+          <label>Name:</label>
+          <input type="text" id="name" name="name" />
+          <label>Password:</label>
+          <input type="password" id="password" name="password" />
+          <input type="submit" value="Submit" />
+          <br />
+          <br />
+          <label>Email:</label>
+         <input type="email" id="email" name="email" />
+         <input type="reset" value="Reset" />
+        </form>
+
+<select name="" id="">
+    <option value="option1">student</option>
+    <option value="option2">teacher</option>
+    <option value="option3">stuff</option>
+</select>
+
+
+
+
+--------------- 

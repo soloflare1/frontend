@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Class Demo</title>
+
+    <style>
+        /* Pseudo class format
+        selector:pseudo-class {
+            property: value;
+        }
+
+        hover - mouse over
+        focus - when an element is selected / typing
+        visited - link already clicked
+        first-child - first element among siblings
+        last-child - last element among siblings
+        nth-child(n) - select elements based on pattern
+        */
+
+        /* Hover Example */
+        h1:hover {
+            color: red;
+        }
+
+        /* Focus Example */
+        input:focus {
+            border: 2px solid blue;
+            background-color: lightyellow;
+            outline: none;
+        }
+
+        /* Input Hover */
+        input:hover {
+            background-color: lightgray;
+        }
+
+        /* Visited Link */
+        a:visited {
+            color: purple;
+        }
+
+        /* First List Item */
+        li:first-child {
+            color: orange;
+        }
+
+        /* Last List Item */
+        li:last-child {
+            color: green;
+        }
+
+        /* Even Items (2n = even) */
+        li:nth-child(2n) {
+            color: blue;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>Pseudo Class Example</h1>
+
+    <h3>Input Fields</h3>
+    <input type="text" placeholder="Enter Name">
+    <br><br>
+    <input type="text" placeholder="Enter Email">
+    <br><br>
+    <input type="text" placeholder="Enter Password">
+
+    <hr>
+
+    <h3>Links</h3>
+    <a href="https://google.com" target="_blank">Google</a><br>
+    <a href="https://facebook.com" target="_blank">Facebook</a><br>
+    <a href="https://youtube.com" target="_blank">YouTube</a>
+
+    <hr>
+
+    <h3>List Items</h3>
+    <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Mango</li>
+        <li>Orange</li>
+    </ul>
+
+</body>
+</html>

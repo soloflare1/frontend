@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web page</title>
+
+     <h1> This is external style </h1>
+    <link rel="stylesheet" href="basic.css">
+
+    
+     <h1> This is internal style </h1>
+    <style>
+        body {
+            background-color: pink;
+        }
+        li {
+            background-color: lightblue;
+            width: 50%;
+        }
+        ul {
+            background-color: pink;
+            width: 300px;
+        }
+        .yellowText, .attention {
+            color: yellow;
+        }
+        .fontSize20 {
+            font-size: 20px;
+            margin: 10px;
+        }
+
+        <!-- this selector applies to all elements 
+        
+        -->
+        * {
+            font-family: Arial, sans-serif;
+            text-color: green;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1> This is inline style </h1>
+    <h1 style="color:green; background-color:black;">Welcome to My Web Page</h1>
+  
+
+    <div>
+
+        <h4> css measuring units </h4>
+        <div>
+            <p> absolute units : px </p>
+            absolute units : means fixed size regardless of other factors
+            e.g., 10px will always be 10 pixels on the screen   
+            px : pixels ( most commonly used unit in web design )
+            it used 
+            for defining font sizes, margins, paddings, widths, heights, etc.
+            
+            relative units : %, vw, vh
+            relative units : means size relative to another element or the viewport    
+            % -> percentage ( relative to parent element )
+            vw -> viewport width ( relative to the width of the viewport )
+            vh -> viewport height ( relative to the height of the viewport )
+
+            50% width -> 50% of the parent element's width
+            
+            <p> relative units : em, rem </p>
+
+        
+        <div>
+
+        <li>
+            <h2> px : relative unit </h2>
+            <ol>Item 1</ol>
+            <ol>Item 2
+            <ol>Subitem 2.1</ol>
+            <ol>Subitem 2.2</ol>
+            </ol>
+        </li>
+
+        <ul>
+            <h2> px : absolute unit </h2>
+            <ol>Item 1</ol>
+            <ol>Item 2
+            <ol>Subitem 2.1</ol>
+            <ol>Subitem 2.2</ol>
+            </ol>
+        </ul>
+
+        </div>
+
+        <section>
+            <h4> css selectors </h4>
+            <ol>
+                selectors :
+                <ul>element selector : selects elements by their tag name -> e.g., p, div, h1 </ul>
+                    for element selector just write the element name
+                    used to apply styles to all elements of that type
+                    e.g., p
+                <div>
+                    p{
+                        property: value;
+                    }
+                    <p>This</p>
+                </div>
+                <ul>class selector : selects elements by their class attribute -> e.g., .classname </ul>
+                 for class selector dot (.) is used before class name
+                 used to apply styles to multiple elements with the same class
+                 e.g., .className
+                <div>
+                    .className{
+                        property: value;
+                    }
+                    <p class="className">This</p>
+                </div>
+                <ul>id selector : selects elements by their id attribute -> e.g., #idname,any meaningful name </ul>
+                    for id selector hash (#) is used before id name
+                    used to apply styles to a single unique element with that id
+                    e.g., #idName
+                
+                <div>
+                    #idName{
+                        property: value;
+                    }
+                    <p id="idName">This</p>
+                </div>
+                <h5>basic difference between class and id :</h5>
+                <ul> class can be used on multiple elements </ul>
+                <ul> id should be unique to a single element </ul>
+
+            </ol>
+        </section>
+
+        <section>
+            <h4> advanced css selectors </h4>
+            <ol class="fontSize20">
+                <p class="yellowText">This is paragraph</p>
+                <p class='fontSize20'>This is paragraph</p>
+                <p>This is paragraph</p>
+                <p>This is paragraph</p>
+                <p>This is paragraph</p>
+                <p>This is<span class="yellowText"> paragraph</span></p>
+                <p>This is paragraph</p>
+                <p>This is paragraph</p>
+                <p>This is paragraph</p>
+            
+            </ol>
+        </section>
+
+    </div
+</body>
+</html>

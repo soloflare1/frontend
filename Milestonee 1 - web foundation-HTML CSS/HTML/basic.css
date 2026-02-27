@@ -1,0 +1,44 @@
+/* css  -> design, presentational layer
+HTML -> structure, content layer 
+CSS -> Cascading Style Sheets
+       Used to style the HTML elements & web pages
+
+       Types of CSS:
+       1. Inline CSS    -> applied directly within an HTML element using the "style" attribute
+        Example: <h1 style="color:blue;">This is a heading</h1> 
+       2. Internal CSS  -> defined within a <style> element inside the <head> section of an HTML document
+        Example: 
+        <head>
+          <style>
+              body {
+               background-color: lightblue;
+              }
+            h1 {
+              color: white;
+            }
+           p {
+             font-family: verdana;
+             }
+
+          </style>
+        </head>
+
+       3. External CSS -> written in a separate .css file and linked to the HTML document using the <link> element
+        Example:
+        In HTML file:
+        <head>
+          <link rel="stylesheet" type="text/css" href="styles.css">
+        </head>
+        
+        In styles.css file:
+        body {
+          background-color: lightblue;
+        }
+        h1 {
+          color: white;
+        }
+        p {
+          font-family: verdana;
+        } */
+
+/* property: value; */

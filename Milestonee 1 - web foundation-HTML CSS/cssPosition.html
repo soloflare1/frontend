@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Position & Pseudo Demo</title>
+
+<style>
+
+/* Common Box Style */
+.box {
+    width: 220px;
+    padding: 15px;
+    margin: 20px;
+    border: 2px solid black;
+}
+
+/* RELATIVE */
+.example-relative {
+    position: relative;
+    top: -10px;
+    left: 10px;
+    background-color: lightblue;
+}
+
+/* ABSOLUTE */
+.container {
+    position: relative;
+    height: 200px;
+    border: 2px dashed gray;
+}
+
+.example-absolute {
+    position: absolute;
+    top: 40px;
+    left: 100px;
+    background-color: lightgreen;
+}
+
+/* STICKY */
+.example-sticky {
+    position: sticky;
+    top: 0;
+    background-color: lightcoral;
+}
+
+/* FIXED */
+.example-fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: lightgoldenrodyellow;
+}
+
+/* Z-INDEX */
+.example-zindex {
+    position: relative;
+    z-index: 10;
+}
+
+/* PSEUDO ELEMENTS */
+h3::before {
+    content: "👉 ";
+    color: gray;
+}
+
+h3::after {
+    content: " (Demo)";
+    color: gray;
+    font-size: 0.8em;
+}
+
+/* Paragraph Styling */
+p::first-letter {
+    font-size: 25px;
+    color: darkred;
+}
+
+p::first-line {
+    font-weight: bold;
+}
+
+/* Link Icons */
+a::before {
+    content: "➡ ";
+}
+
+a::after {
+    content: " 🔗";
+}
+
+/* Input Placeholder */
+input::placeholder {
+    color: gray;
+    font-style: italic;
+}
+
+/* PSEUDO CLASS */
+
+h2:hover {
+    color: red;
+}
+
+input:focus {
+    background-color: lightyellow;
+    border: 2px solid blue;
+    outline: none;
+}
+
+a:visited {
+    color: purple;
+}
+
+</style>
+</head>
+
+<body>
+
+<h2>CSS Position Property Demo</h2>
+
+<div class="box example-relative">
+Relative Position
+</div>
+
+<div class="container">
+<div class="box example-absolute">
+Absolute Position
+</div>
+</div>
+
+<div class="box example-sticky">
+Sticky Position (Scroll)
+</div>
+
+<input type="text" placeholder="Enter your name">
+
+<p>Scroll down to see sticky and fixed effect.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+<a href="https://google.com" target="_blank">Google</a>
+
+<div class="box example-fixed">
+Fixed Position
+</div>
+
+</body>
+</html>

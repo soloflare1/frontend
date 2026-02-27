@@ -1,0 +1,19 @@
+/* Blog CSS File */
+
+
+/* Navigation List Items */
+nav li{ 
+    list-style: none;
+    display: inline-block;
+    margin-right: 20px;
+    padding: 10px;
+}
+
+/* Hover Effect */
+nav li:hover{
+    background-color: aqua;
+}
+/* Link Styles */
+nav li a{
+    text-decoration: none;
+}
