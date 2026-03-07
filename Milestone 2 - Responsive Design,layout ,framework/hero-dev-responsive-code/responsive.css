@@ -1,0 +1,15 @@
+/* web first design   */
+/* //laptop device  */
+@media screen and (max-width:1200px) {}
+
+/* //tablet device  */
+@media screen and (max-width:992px) {}
+
+/* //Big Moble device  */
+@media screen and (max-width:768px) {}
+
+/* normal device  */
+@media screen and (max-width:576px) {}
+
+/* device specific media query  */
+@media screen and (min-width:576px) and (max-width:992px) {}

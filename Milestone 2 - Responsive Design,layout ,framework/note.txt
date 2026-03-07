@@ -1,0 +1,92 @@
+font->
+16px = 1rem
+
+{white-space : nowrap
+overflow : hidden
+text-overflow : ellipsis
+(i am...)
+text-overflow : clip}
+
+or title="loremtextejnfjenje"
+
+priority 
+id > class
+
+flex works on immediate child
+
+main > h2
+immediate h2 of main
+
+only {display : grid} don't works
+so->
+{
+display : grid
+grid-template-columns: 
+}
+
+
+figma color copy
+css rgb
+
+
+
+
+design -> 
+what project
+similar project search template
+color schema
+what kind of text will be there - typhograhy
+find lots of resources
+user experience
+responsive
+
+
+
+
+/* transform: scale(0.5)
+translateX(100px) translateY (-150px) rotate (45deg); */
+/* transform: scale(0.5) rotate
+(45deg) translateX(100px); */
+}
+.inner:hover{
+transform: translateY(-150px)
+scale(0.5) rotate (45deg);
+}
+
+
+
+css var 
+:root{
+    --primary-color: ☐ purple;
+    --secondary-color: blue;
+    --font-size: 20px
+}
+h1{
+color: var(--primary-color);
+}
+.box{
+    border: 2px solid var(--primary-color);
+}
+.box p{
+    color: var(--primary-color);
+    font-size: var(--font-size);
+}
+
+css calc
+
+.box{
+border: 2px solid var
+(--primary-color);
+width: calc(100% - 300px);
+}
+
+
+
+tailwind
+
+-normal
+text-3xl
+
+-custom 
+text-[20px]
+or variable
