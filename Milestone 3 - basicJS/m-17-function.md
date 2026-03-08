@@ -2,7 +2,7 @@
 
 # **JavaScript Functions**
 
-### **Function Structure**
+### **Function Structure - A block of code that performs a specific task**
 
 ```javascript
 function name(p1, p2, ...) {
