@@ -1,71 +1,78 @@
 
-## **Arrays in JavaScript**
+# **Arrays in JavaScript**
 
-### **Creating Arrays**
+## **Creating Arrays**
 
-```javascript id="2c8p3q"
+```javascript
 const a = [1, 2, 3, 4, 5, 6, 8];
 const students = ["naba", "nj"];
 const mix = [1, "aas", true, students];
 ```
 
-* Arrays can contain **numbers, strings, booleans, other arrays**.
-* You can **modify elements** by index:
+Arrays can contain:
 
-```javascript id="7f4f0r"
+* numbers
+* strings
+* booleans
+* other arrays
+
+Modify element:
+
+```javascript
 mix[2] = false;
 ```
 
 ---
 
-### **Array Length**
+# **Array Length**
 
-```javascript id="c7q2hk"
-console.log(a.length);  // number of elements
+```javascript
+console.log(a.length);
 ```
 
 ---
 
-### **Add Elements**
+# **Add Elements**
 
-```javascript id="bzxk6c"
-a.push(10);           // add at end
-a.push(11, 12, 13);   // multiple elements at end
-a.unshift(30);        // add at start
+```javascript
+a.push(10);        // add at end
+a.push(11,12,13);  // add multiple
+
+a.unshift(30);     // add at beginning
 ```
 
 ---
 
-### **Remove Elements**
+# **Remove Elements**
 
-```javascript id="zjsa1o"
-a.pop();   // remove from end
-a.shift(); // remove from start
+```javascript
+a.pop();    // remove from end
+a.shift();  // remove from start
 ```
 
 ---
 
-### **Searching**
+# **Searching**
 
-```javascript id="i1y2k9"
-a.indexOf(10);       // returns index of 10
-a.indexOf(200);      // -1 if not found
+```javascript
+a.indexOf(10);   // index of element
+a.indexOf(200);  // -1 if not found
 
-a.includes(10);      // true / false
-a.includes("naba");  // false (string not in a)
+a.includes(10);  // true
+a.includes("naba"); // false
 ```
 
-✅ **Conditional example**
+Conditional example:
 
-```javascript id="ox2kfr"
+```javascript
 a.includes(20) ? a.pop() : a.push(20);
 ```
 
 ---
 
-### **Check if Array**
+# **Check if Array**
 
-```javascript id="2k8mfd"
+```javascript
 const name = "Naba";
 const n = 10;
 const d = [];
@@ -80,25 +87,147 @@ console.log(Array.isArray(h));    // false
 
 ---
 
-### **Convert Array to String**
+# **Convert Array → String**
 
-```javascript id="j4b2qv"
-a.join();       // "1,2,3,4,5,6,8"
-a.join('+');    // "1+2+3+4+5+6+8"
-a.join('|');    // "1|2|3|4|5|6|8"
+```javascript
+a.join();     // "1,2,3,4,5,6,8"
+a.join('+');  // "1+2+3+4+5+6+8"
+a.join('|');  // "1|2|3|4|5|6|8"
 ```
 
 ---
 
-### **Concatenate / Slice**
+# **Concat & Slice**
 
-```javascript id="l9x7jq"
-a1.concat(a2);            // merge arrays
+```javascript
+a1.concat(a2);           // merge arrays
 
-a.slice(startIdx, endIdx); // extract portion (end not included)
+a.slice(start, end);     // end not included
 ```
 
 ---
 
+# **Reverse Array**
 
+### **Method 1 (Built-in)**
+
+```javascript
+a.reverse();
+```
+
+⚠ Changes **original array**
+
+---
+
+### **Method 2 (unshift)**
+
+```javascript
+const b = [];
+
+for (const i of a) {
+   b.unshift(i);
+}
+```
+
+---
+
+### **Method 3 (reverse loop)**
+
+```javascript
+const c = [];
+
+for (let i = a.length - 1; i >= 0; i--) {
+   c.push(a[i]);
+}
+```
+
+---
+
+# **Sort Array**
+
+Default sort (problematic in JS):
+
+```javascript
+a.sort();
+```
+
+⚠ JS sorts **as strings**, not numbers.
+
+Example problem:
+
+```
+[1, 2, 10, 5]
+↓
+[1,10,2,5]
+```
+
+---
+
+# **Correct Numeric Sort**
+
+### **Ascending**
+
+```javascript
+a.sort(function(a, b){
+   return a - b;
+});
+```
+
+---
+
+### **Descending**
+
+```javascript
+a.sort(function(a, b){
+   return b - a;
+});
+```
+
+---
+
+# **Sort Without Changing Original Array**
+
+Use **spread operator**
+
+### Ascending
+
+```javascript
+[...a].sort(function(a,b){
+   return a - b;
+});
+```
+
+### Descending
+
+```javascript
+[...a].sort(function(a,b){
+   return b - a;
+});
+```
+
+---
+
+# **Quick Summary**
+
+| Method       | Purpose        |
+| ------------ | -------------- |
+| `push()`     | add end        |
+| `unshift()`  | add start      |
+| `pop()`      | remove end     |
+| `shift()`    | remove start   |
+| `indexOf()`  | find index     |
+| `includes()` | check element  |
+| `join()`     | array → string |
+| `slice()`    | extract part   |
+| `reverse()`  | reverse array  |
+| `sort()`     | sort array     |
+
+---
+
+✅ **Important exam concept**
+
+```
+sort() treats numbers as strings
+→ use (a,b) => a-b
+```
 
