@@ -248,3 +248,117 @@ console.log(second);
 | object check | `typeof x === "object"` |
 | array check  | `Array.isArray(x)`      |
 
+
+
+
+
+
+```javascript
+const nayok = {
+  name: 'Sakib Khan',
+  id: 121,
+  address: 'movie cinema',
+  isSingle: true,
+  friends: ['Apu', 'Raaz', 'Salman', 'Aamir'],
+
+  movies: [
+    { name: 'No. 1', year: 2015 },
+    { name: 'King Khan', year: 2018 }
+  ],
+
+  act: function () {
+    console.log('acting like Sakib Khan');
+  },
+
+  car: {
+    brand: 'Tesla',
+    price: 50000000,
+    made: 2025,
+    manufacturer: {
+      name: 'Tesla',
+      ceo: 'Elon Musk',
+      country: 'USA'
+    }
+  }
+};
+
+console.log(nayok);
+```
+
+---
+
+# 2️⃣ Array-like Object
+
+```javascript
+const products = {
+  '0': 15,
+  '1': 56,
+  '2': 87
+};
+
+console.log(products[0]); // 15
+```
+
+Equivalent Array:
+
+```javascript
+const productsArray = [15, 56, 87];
+```
+
+---
+
+# 3️⃣ Products List
+
+```javascript
+const products = [
+  { id: 1, name: 'Xiaomi phone One night', price: 19000 },
+  { id: 2, name: 'iPhone', price: 19000 },
+  { id: 3, name: 'MacBook Air', price: 119000 },
+  { id: 4, name: 'Lenovo Yoga Laptop 2025', price: 19000 },
+  { id: 5, name: 'Dell Inspiron Laptop', price: 19000 },
+  { id: 6, name: 'Samsung Phone Note 7', price: 19000 },
+  { id: 7, name: 'Nokia Old Age Phone Gone', price: 19000 },
+  { id: 8, name: 'Phone One', price: 19000 }
+];
+```
+
+---
+
+# 4️⃣ Search Function
+
+```javascript
+function matchedProducts(products, search) {
+  const matched = [];
+
+  for (const product of products) {
+    if (product.name.toLowerCase().includes(search.toLowerCase())) {
+      matched.push(product);
+    }
+  }
+
+  return matched;
+}
+```
+
+---
+
+# 5️⃣ Call Function
+
+```javascript
+const result = matchedProducts(products, 'phone');
+console.log(result);
+```
+
+---
+
+# Output Example
+
+```javascript
+[
+ { id: 1, name: 'Xiaomi phone One night', price: 19000 },
+ { id: 2, name: 'iPhone', price: 19000 },
+ { id: 6, name: 'Samsung Phone Note 7', price: 19000 },
+ { id: 7, name: 'Nokia Old Age Phone Gone', price: 19000 },
+ { id: 8, name: 'Phone One', price: 19000 }
+]
+```
