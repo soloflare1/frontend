@@ -561,11 +561,30 @@ z-50
 
 ### What
 
-Controls stacking order.
+**z-index (Short Note)**
 
-Higher value = front.
+**What:**
+`z-index` controls **which element appears in front or behind**.
 
-Used for testimonial card layering.
+**Rule:**
+`z-index` works only if the element has a position:
+
+```html
+relative
+absolute
+fixed
+sticky
+```
+
+**Meaning:**
+
+```
+Higher z-index → front
+Lower z-index → behind
+```
+
+**In this project:**
+`z-50` is used so the **main testimonial card appears above the other cards**.
 
 ---
 
