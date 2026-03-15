@@ -1,0 +1,395 @@
+# 1. What is a JavaScript Event
+
+## What
+
+An **Event** is an action that happens in the browser.
+
+It can be triggered by:
+
+* user interaction
+* browser activity
+
+Examples:
+
+* clicking a button
+* typing on keyboard
+* submitting a form
+* scrolling the page
+
+Example:
+
+```html
+<button>Click me</button>
+```
+
+When the user clicks → **click event occurs**.
+
+---
+
+# 2. Why Events Are Used
+
+Events allow websites to **respond to user actions**.
+
+Examples:
+
+* click button → change color
+* type in input → show text
+* submit form → send data
+* hover mouse → show effect
+
+Without events, websites would be **static**.
+
+---
+
+# 3. Event Handler
+
+## What
+
+An **event handler** is a function that runs when an event occurs.
+
+Example:
+
+```javascript
+button.addEventListener("click", function(){
+console.log("Button clicked");
+});
+```
+
+Here:
+
+* event → click
+* handler → function()
+
+---
+
+# 4. Ways to Add Events (4 Methods)
+
+---
+
+## Method 1 — Inline HTML Event
+
+```html
+<button onclick="console.log('clicked')">Click</button>
+```
+
+### Problem
+
+Not recommended for real projects.
+
+Because HTML and JS mix together.
+
+---
+
+## Method 2 — Calling Function
+
+```html
+<button onclick="makeYellow()">Yellow</button>
+```
+
+```javascript
+function makeYellow(){
+document.body.style.backgroundColor = "yellow";
+}
+```
+
+---
+
+## Method 3 — onclick Property
+
+```javascript
+const btn = document.getElementById("btn");
+
+btn.onclick = function(){
+document.body.style.backgroundColor = "blue";
+}
+```
+
+---
+
+## Method 4 — addEventListener (Best Practice)
+
+Most used method.
+
+```javascript
+document.getElementById("btn").addEventListener("click", 
+function(){
+document.body.style.backgroundColor = "green";
+});
+```
+
+---
+
+# 5. Mouse Events
+
+Mouse events occur when the user interacts with the mouse.
+
+| Event     | Meaning              |
+| --------- | -------------------- |
+| click     | user clicks element  |
+| mouseover | mouse enters element |
+| mouseout  | mouse leaves element |
+
+Example:
+
+```javascript
+const box = document.querySelector(".box");
+
+box.addEventListener("click", function(){
+console.log("Box clicked");
+});
+
+box.addEventListener("mouseover", function(){
+box.style.backgroundColor = "yellow";
+});
+
+box.addEventListener("mouseout", function(){
+box.style.backgroundColor = "white";
+});
+```
+
+---
+
+# 6. Keyboard Events
+
+Keyboard events detect key actions.
+
+| Event    | Meaning            |
+| -------- | ------------------ |
+| keydown  | key pressed        |
+| keyup    | key released       |
+| keypress | key press detected |
+
+Example:
+
+```javascript
+const input = document.querySelector("input");
+
+input.addEventListener("keydown", function(event){
+console.log("Key pressed:", event.key);
+});
+
+input.addEventListener("keyup", function(event){
+console.log("Key released:", event.key);
+});
+```
+
+Example output:
+
+```
+Key pressed: a
+Key released: a
+```
+
+---
+
+# 7. Form Events
+
+Form events occur when interacting with forms.
+
+| Event  | Meaning             |
+| ------ | ------------------- |
+| submit | form submitted      |
+| change | input value changed |
+| focus  | input field active  |
+
+---
+
+## Submit Event
+
+```javascript
+const form = document.querySelector("form");
+
+form.addEventListener("submit", function(event){
+
+event.preventDefault();
+
+console.log("Form submitted");
+
+});
+```
+
+### Why `preventDefault()`
+
+Normally form submission **reloads the page**.
+
+```
+event.preventDefault()
+```
+
+prevents that.
+
+---
+
+## Change Event
+
+```javascript
+const input = document.querySelector("input");
+
+input.addEventListener("change", function(){
+console.log("Value changed:", input.value);
+});
+```
+
+---
+
+## Focus Event
+
+```javascript
+input.addEventListener("focus", function(){
+console.log("Input focused");
+});
+```
+
+---
+
+# 8. Window Events
+
+These events are related to the browser window.
+
+| Event  | Meaning             |
+| ------ | ------------------- |
+| load   | page fully loaded   |
+| resize | window size changed |
+| scroll | page scrolling      |
+
+---
+
+## Load Event
+
+```javascript
+window.addEventListener("load", function(){
+console.log("Page fully loaded");
+});
+```
+
+---
+
+## Resize Event
+
+```javascript
+window.addEventListener("resize", function(){
+console.log("Window resized");
+});
+```
+
+---
+
+## Scroll Event
+
+```javascript
+window.addEventListener("scroll", function(){
+console.log("Page scrolled");
+});
+```
+
+---
+
+# 9. Event Object
+
+When an event occurs, JavaScript automatically provides an **event object**.
+
+Example:
+
+```javascript
+button.addEventListener("click", function(event){
+
+console.log(event.type);
+console.log(event.target);
+
+});
+```
+
+---
+
+## Important Event Properties
+
+| Property     | Meaning                      |
+| ------------ | ---------------------------- |
+| event.target | element that triggered event |
+| event.type   | type of event                |
+| event.key    | pressed keyboard key         |
+
+Example:
+
+```
+Event type: click
+Target element: <button>
+```
+
+---
+
+# 10. Simple Real Example
+
+HTML
+
+```html
+<button id="btn-green">Make Green</button>
+```
+
+JavaScript
+
+```javascript
+document
+.getElementById("btn-green")
+.addEventListener("click", function(){
+
+document.body.style.backgroundColor = "green";
+
+});
+```
+
+When button is clicked → background becomes green.
+
+---
+
+# 11. Simple GitHub-Style Delete Confirmation
+
+Example:
+
+```javascript
+const input = document.getElementById("delete-input");
+const btn = document.getElementById("delete-btn");
+
+input.addEventListener("keyup", function(event){
+
+if(event.target.value === "delete"){
+btn.removeAttribute("disabled");
+}
+else{
+btn.setAttribute("disabled", true);
+}
+
+});
+```
+
+User must type **delete** before button becomes active.
+
+---
+
+# 12. Important Rule
+
+```
+Event = User action
+
+Event Listener = Detect event
+
+Event Handler = Function that runs
+```
+
+---
+
+# 13. Most Used Events in Real Projects
+
+```
+click
+input
+change
+submit
+keydown
+keyup
+mouseover
+mouseout
+scroll
+load
+```
+
